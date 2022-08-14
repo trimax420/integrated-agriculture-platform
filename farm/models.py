@@ -1,7 +1,6 @@
 import email
 from django.db import models
 from django.core.validators import RegexValidator
-import numpy
 # Create your models here.
 class farmer(models.Model):
     adhaar_number = models.CharField(max_length=12, validators=[RegexValidator(r'^\d{1,12}$')])
