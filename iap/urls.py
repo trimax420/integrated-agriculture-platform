@@ -18,6 +18,6 @@ from django.urls import path , include
 
 
 urlpatterns = [
-    path('farm/', include('farm.urls'))
+    path('', include('farm.urls'))
     
 ]

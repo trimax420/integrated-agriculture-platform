@@ -8,7 +8,22 @@ def home(request):
     return render(request,'home.html')
 
 def login(request):
-    return render(request,'login.html')
+    if request.method == 'POST':
+            username = request.POST.get('username')
+            password = request.POST.get('password')
+             
+            user = login.Auth_objects.get(userid=username,password=password)
+            if user is not None:               
+                return HttpResponse('sucessful')
+            else:
+                print("Someone tried to login and failed.")
+                print("They used username: {} and password: {}".format(username,password))
+     
+                return HttpResponse('wrong')
+        
+    else:
+        return render(request,'login.html')
+    
 
 def register(request):
     if request.method == 'POST':
