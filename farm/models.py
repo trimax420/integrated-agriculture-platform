@@ -53,10 +53,7 @@ class login(models.Model):
     password = models.CharField(max_length= 80)
     role = models.CharField(max_length=80,choices=CHOICES)
     
-    def __str__(self):
-        return self.userid
-        
-    Auth_objects = models.Manager()
+
 
 class registration(models.Model):
     CHOICES = (

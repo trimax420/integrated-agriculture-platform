@@ -11,16 +11,12 @@ def login(request):
     if request.method == 'POST':
             username = request.POST.get('username')
             password = request.POST.get('password')
-             
-            user = login.Auth_objects.get(userid=username,password=password)
-            if user is not None:               
+            if login.objects.filter(userid=username).exists() and login.objects.filter(password).exists():
                 return HttpResponse('sucessful')
             else:
-                print("Someone tried to login and failed.")
-                print("They used username: {} and password: {}".format(username,password))
-     
-                return HttpResponse('wrong')
-        
+                return HttpResponse('error')
+
+            
     else:
         return render(request,'login.html')
     
