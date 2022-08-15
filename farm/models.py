@@ -37,9 +37,21 @@ class warehouse(models.Model):
     message = models.CharField(max_length=80)
 
 class login(models.Model):
+    CHOICES = (
+        ('Farmer', 'Farmer'),
+        ('Researcher', 'Researcher'),
+        ('Agro-scientist', 'Agro-scientist'),
+        ('Drone Operator', 'Drone Operator'),
+        ('KVK', 'KVK'),
+        ('Warehouse','Warehouse'),
+        ('Food Processor','Food Processor'),
+        ('Distributer','Distributer'),
+        ('Retailer','Retailer'),
+        ('Others','Others')
+    )
     userid = models.CharField(max_length=80)
     password = models.CharField(max_length= 80)
-    role = models.CharField(max_length=80)
+    role = models.CharField(max_length=80,choices=CHOICES)
 
 class registration(models.Model):
     CHOICES = (
