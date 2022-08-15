@@ -1,17 +1,16 @@
 from django.shortcuts import render ,redirect
 from django.http import HttpResponseRedirect,HttpResponse
-from django.contrib.auth import login
 from .forms import loginForm,registrationForm,farmerForm,research_agroForm,drone_operatorForm,kvkForm,warehouseForm,registrationForm
 from .models import login
 # Create your views here.
 def home(request):
     return render(request,'home.html')
 
-def login(request):
+def login_page(request):
     if request.method == 'POST':
             username = request.POST.get('username')
             password = request.POST.get('password')
-            if login.objects.filter(userid=username).exists() and login.objects.filter(password).exists():
+            if login.objects.filter(userid=username ,password=password).exists() == True :
                 return HttpResponse('sucessful')
             else:
                 return HttpResponse('error')
