@@ -6,7 +6,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier 
 from xgboost import XGBClassifier
 
-data=pd.read_csv('abcd/datasets/Crop_recommendation.csv')
+data=pd.read_csv('farm/datasets/Crop_recommendation.csv')
 data=data.drop(['N','P','K'],axis=1)
 
 label_encoder = LabelEncoder()

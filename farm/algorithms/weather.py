@@ -7,7 +7,7 @@ import seaborn as sns
 from statsmodels.tsa.seasonal import seasonal_decompose
 from dateutil.parser import parse
 
-df=pd.read_csv('/mnt/c/Users/lokes/Downloads/TemperatureMum 1999-2019.csv')
+df=pd.read_csv('/home/trimax/Desktop/integrated-agriculture-platform/farm/datasets/TemperatureMum 1999-2019.csv')
 df_date=[]
 for i in range(0,len(df['Month'])):
     date=datetime.date(year=df['Year'][i],month=df['Month'][i],day=df['Day'][i])

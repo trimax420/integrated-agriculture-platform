@@ -81,9 +81,9 @@ DATABASES = {
 
         'NAME': 'iap',
 
-        'USER': 'postgres',
+        'USER': 'trimax',
 
-        'PASSWORD': 'postgres',
+        'PASSWORD': 'anjan9812',
 
         'HOST': '127.0.0.1',
 
@@ -125,8 +125,11 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
-
-STATIC_URL = 'static/'
+import os 
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+VENV_PATH = os.path.dirname(BASE_DIR)
+STATIC_ROOT = os.path.join(BASE_DIR, 'static root')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field

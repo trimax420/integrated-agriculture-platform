@@ -35,3 +35,12 @@ class registrationForm(forms.ModelForm):
     class Meta:
         model = registration
         fields = "__all__"
+
+class fieldForm(forms.Form):
+    temp = forms.FloatField()
+    humi = forms.FloatField()
+    ph = forms.FloatField()
+    rain = forms.FloatField()
+
+class wareForm(forms.Form):
+    file = forms.FileField()
